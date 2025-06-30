@@ -9,7 +9,7 @@ from datetime import datetime
 
 # --- CONFIGURAÇÃO DA APLICAÇÃO ---
 app = Flask(__name__)
-# Chave secreta para segurança das sessões (mude para um valor aleatório e seguro)
+# Chave secreta para segurança das sessões
 app.config['SECRET_KEY'] = '!:\G"pZ1rvqk:GQck*yl-EGlKE(L8=UR|TUi6qMkmhL|T]5T,9bmJO=)9xVAfqi'
 # Configuração do caminho do banco de dados
 basedir = os.path.abspath(os.path.dirname(__file__))

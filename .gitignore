@@ -1,0 +1,24 @@
+# Arquivos do Ambiente Virtual
+/venv/
+/.venv/
+/env/
+/ENV/
+
+# Arquivos de cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de banco de dados
+# NUNCA envie seu banco de dados para um repositório público!
+instance/
+*.db
+*.sqlite3
+
+# Arquivos de configuração sensíveis (se você criar no futuro)
+.env
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db

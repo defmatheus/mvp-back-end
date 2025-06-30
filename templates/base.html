@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Terê Verde Online{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="{{ url_for('index') }}" class="logo">Terê Verde Online</a>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Início</a></li>
+        <li><a href="{{ url_for('eventos') }}">Eventos e Trilhas</a></li>
+        {% if current_user.is_authenticated %}
+        <li><a href="{{ url_for('admin_dashboard') }}">Painel Admin</a></li>
+        <li><a href="{{ url_for('logout') }}">Sair</a></li>
+        {% else %}
+        <li><a href="{{ url_for('login') }}">Login Admin</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Circuito Terê Verde Online</p>
+  </footer>
+</body>
+
+</html>

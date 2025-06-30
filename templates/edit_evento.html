@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}{{ acao }} Evento{% endblock %}
+
+{% block content %}
+<h2>{{ acao }} Evento</h2>
+<div class="form-container">
+  <form method="POST">
+    <div class="form-group">
+      <label for="titulo">Título</label>
+      <input type="text" id="titulo" name="titulo" value="{{ evento.titulo if evento else '' }}" required>
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" name="descricao" rows="5" required>{{ evento.descricao if evento else '' }}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="local">Local</label>
+      <input type="text" id="local" name="local" value="{{ evento.local if evento else '' }}">
+    </div>
+    <div class="form-group">
+      <label for="data_evento">Data e Hora do Evento</label>
+      <input type="datetime-local" id="data_evento" name="data_evento" value="{{ evento.data_evento.strftime('%Y-%m-%dT%H:%M') if evento else '' }}" required>
+    </div>
+    <div class="form-group-check">
+      <input type="checkbox" id="disponivel" name="disponivel" {% if not evento or evento.disponivel %}checked{% endif %}>
+      <label for="disponivel">Visível para o público</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

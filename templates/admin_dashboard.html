@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Painel do Administrador{% endblock %}
+
+{% block content %}
+<div class="admin-header">
+  <h2>Gerenciamento de Conteúdo</h2>
+  <a href="{{ url_for('novo_evento') }}" class="btn btn-success">Adicionar Novo Evento</a>
+</div>
+
+<table class="admin-table">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Data</th>
+      <th>Local</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for evento in eventos %}
+    <tr>
+      <td>{{ evento.titulo }}</td>
+      <td>{{ evento.data_evento.strftime('%d/%m/%Y %H:%M') }}</td>
+      <td>{{ evento.local }}</td>
+      <td>
+        {% if evento.disponivel %}
+        <span class="status status-on">Disponível</span>
+        {% else %}
+        <span class="status status-off">Oculto</span>
+        {% endif %}
+      </td>
+      <td class="actions">
+        <a href="{{ url_for('editar_evento', id=evento.id) }}" class="btn btn-sm btn-warning">Editar</a>
+        <form action="{{ url_for('deletar_evento', id=evento.id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar este evento?');">
+          <button type="submit" class="btn btn-sm btn-danger">Deletar</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

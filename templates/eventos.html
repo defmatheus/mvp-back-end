@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Eventos e Trilhas{% endblock %}
+
+{% block content %}
+<h2>Próximos Eventos e Atividades Disponíveis</h2>
+<div class="event-list">
+  {% if eventos %}
+  {% for evento in eventos %}
+  <div class="card">
+    <h3>{{ evento.titulo }}</h3>
+    <p><strong>Local:</strong> {{ evento.local }}</p>
+    <p><strong>Data:</strong> {{ evento.data_evento.strftime('%d/%m/%Y às %H:%M') }}</p>
+    <p>{{ evento.descricao | truncate(150) }}</p>
+  </div>
+  {% endfor %}
+  {% else %}
+  <p>Nenhum evento disponível no momento. Volte em breve!</p>
+  {% endif %}
+</div>
+{% endblock %}

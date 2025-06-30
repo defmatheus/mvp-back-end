@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Bem-vindo ao Terê Verde Online{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <h1>Explore as Belezas Naturais de Teresópolis</h1>
+  <p>Sua plataforma completa para trilhas, cachoeiras e eventos na região.</p>
+  <a href="{{ url_for('eventos') }}" class="btn btn-primary">Ver Próximos Eventos</a>
+</div>
+<section class="info-section">
+  <h2>Sobre o Projeto</h2>
+  <p>A plataforma “Terê Verde Online” permite que os visitantes tenham acesso a informações atualizadas sobre a biodiversidade, trilhas, cachoeiras e eventos que ocorrem nos espaços protegidos de Teresópolis. Com uma interface amigável e recursos interativos, o site se tornará uma ferramenta essencial para turistas que desejam explorar as belezas naturais de Teresópolis de forma consciente e atualizada.</p>
+</section>
+{% endblock %}

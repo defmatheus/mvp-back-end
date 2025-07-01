@@ -32,7 +32,7 @@ Certifique-se de que os seguintes diretórios e arquivos existam no projeto:
 ├── app.py  
 ├── static/  
 │ └── uploads/ ← Crie essa pasta  
-├── instance/  
+├── instance/  ← Crie essa pasta
 │ └── database.db ← Crie esse arquivo vazio  
 └── ...  
   

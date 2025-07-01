@@ -24,7 +24,7 @@ Acesse o link abaixo e instale a versão mais recente do Python para Windows:
 
 ---
 
-### 2️⃣ Estrutura de Diretórios
+## 2️⃣ Estrutura de Diretórios
 
 Certifique-se de que os seguintes diretórios e arquivos existam no projeto:
 
@@ -38,7 +38,7 @@ Certifique-se de que os seguintes diretórios e arquivos existam no projeto:
 
 ---
 
-### 3️⃣ Criar e ativar ambiente virtual
+## 3️⃣ Criar e ativar ambiente virtual
 
 No terminal, dentro da pasta do projeto, execute:
 
@@ -49,7 +49,7 @@ venv\Scripts\activate
 
 ---
 
-### 4️⃣ Instalar dependências
+## 4️⃣ Instalar dependências
 
 Com o ambiente virtual ativado, instale os pacotes necessários:
 
@@ -57,7 +57,9 @@ Com o ambiente virtual ativado, instale os pacotes necessários:
 pip install Flask Flask-SQLAlchemy Flask-Login Werkzeug
 ```
 
-### 5️⃣ Criar usuário administrador
+--
+
+## 5️⃣ Criar usuário administrador
 
 Ainda com o ambiente virtual ativado, entre no shell interativo do Python:
 
@@ -77,6 +79,8 @@ db.session.add(admin)
 db.session.commit()
 exit()
 ```
+
+---
 
 ### 6️⃣ Executar o servidor 
 

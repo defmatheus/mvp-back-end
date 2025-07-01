@@ -11,7 +11,6 @@ __pycache__/
 *.pyd
 
 # Arquivos de banco de dados
-# NUNCA envie seu banco de dados para um repositório público!
 instance/
 *.db
 *.sqlite3
@@ -22,3 +21,7 @@ instance/
 # Arquivos de sistema operacional
 .DS_Store
 Thumbs.db
+
+# Imagens
+*.jpg
+*.png

@@ -28,7 +28,7 @@ Acesse o link abaixo e instale a versão mais recente do Python para Windows:
 
 Certifique-se de que os seguintes diretórios e arquivos existam no projeto:
 
-📁 tere-verde-online/
+📁 tere-verde-online/  
 ├── app.py  
 ├── static/  
 │ └── uploads/ ← Crie essa pasta  

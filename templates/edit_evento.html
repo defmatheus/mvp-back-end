@@ -5,7 +5,7 @@
 {% block content %}
 <h2>{{ acao }} Evento</h2>
 <div class="form-container">
-  <form method="POST">
+  <form method="POST" enctype="multipart/form-data">
     <div class="form-group">
       <label for="titulo">Título</label>
       <input type="text" id="titulo" name="titulo" value="{{ evento.titulo if evento else '' }}" required>
@@ -22,6 +22,15 @@
       <label for="data_evento">Data e Hora do Evento</label>
       <input type="datetime-local" id="data_evento" name="data_evento" value="{{ evento.data_evento.strftime('%Y-%m-%dT%H:%M') if evento else '' }}" required>
     </div>
+
+    <div class="form-group">
+      <label for="imagem">Imagem do Evento (JPG, PNG)</label>
+      {% if evento and evento.imagem_filename %}
+      <img src="{{ url_for('static', filename='uploads/' + evento.imagem_filename) }}" alt="Imagem atual" style="max-width: 200px; display: block; margin-bottom: 10px;">
+      {% endif %}
+      <input type="file" id="imagem" name="imagem" accept="image/png, image/jpeg, image/gif">
+    </div>
+
     <div class="form-group-check">
       <input type="checkbox" id="disponivel" name="disponivel" {% if not evento or evento.disponivel %}checked{% endif %}>
       <label for="disponivel">Visível para o público</label>

@@ -29,15 +29,15 @@ Acesse o link abaixo e instale a versão mais recente do Python para Windows:
 Certifique-se de que os seguintes diretórios e arquivos existam no projeto:
 
 📁 tere-verde-online/
-├── app.py
-├── static/
-│ └── uploads/ ← Crie essa pasta
-├── instance/
-│ └── database.db ← Crie esse arquivo vazio
-└── ...
-
+├── app.py  
+├── static/  
+│ └── uploads/ ← Crie essa pasta  
+├── instance/  
+│ └── database.db ← Crie esse arquivo vazio  
+└── ...  
+  
 ---
-
+  
 ## 3️⃣ Criar e ativar ambiente virtual
 
 No terminal, dentro da pasta do projeto, execute:
@@ -46,9 +46,9 @@ No terminal, dentro da pasta do projeto, execute:
 py -m venv venv
 venv\Scripts\activate
 ```
-
+  
 ---
-
+  
 ## 4️⃣ Instalar dependências
 
 Com o ambiente virtual ativado, instale os pacotes necessários:
@@ -56,9 +56,9 @@ Com o ambiente virtual ativado, instale os pacotes necessários:
 ```bash
 pip install Flask Flask-SQLAlchemy Flask-Login Werkzeug
 ```
-
---
-
+  
+---
+  
 ## 5️⃣ Criar usuário administrador
 
 Ainda com o ambiente virtual ativado, entre no shell interativo do Python:
@@ -79,9 +79,9 @@ db.session.add(admin)
 db.session.commit()
 exit()
 ```
-
+  
 ---
-
+  
 ### 6️⃣ Executar o servidor 
 
 No terminal (com o ambiente virtual ativado), rode:

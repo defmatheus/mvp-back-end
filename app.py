@@ -150,7 +150,6 @@ def editar_evento(id): # <<< MODIFICADO
             imagem = request.files['imagem']
             if imagem.filename != '' and allowed_file(imagem.filename):
                 filename = secure_filename(imagem.filename)
-                # Aqui você pode adicionar lógica para deletar a imagem antiga do disco se desejar
                 evento.imagem_filename = filename
                 imagem.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
@@ -165,7 +164,6 @@ def editar_evento(id): # <<< MODIFICADO
 @login_required
 def deletar_evento(id):
     evento = Evento.query.get_or_404(id)
-    # Adicionar lógica para deletar o arquivo de imagem do disco se ele existir
     if evento.imagem_filename:
         try:
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], evento.imagem_filename))

@@ -1,6 +1,6 @@
 # 🧩 Flask App - Guia de Execução
 
-Este guia apresenta os passos necessários para configurar e executar a aplicação Flask localmente.
+Este guia apresenta os passos necessários para configurar e executar a aplicação Flask localmente, referente a situação-problema ***Circuito Terê Verde*** do trabalho da matéria ***MVP BACK-END***.
 
 ---
 
@@ -95,3 +95,11 @@ Depois disso abra o navegador e acesse:
 ```cpp
 http://127.0.0.1:5000
 ```
+
+---
+
+## Créditos
+
+ Este projeto foi desenvolvido por:
+
+[Matheus Menezes]
